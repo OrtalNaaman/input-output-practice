@@ -1,0 +1,13 @@
+<p>Parent Component</p>
+<input type="text" placeholder="insert text" #parentInput />
+<button type="button" (click)="buttonClicked(parentInput.value)">send</button>
+<br />
+<br />
+<div [hidden]="!clicked">The inside button was clicked!</div>
+<br />
+<br />
+<hr />
+<app-inside
+  [getMessage]="parentMessage"
+  (outMessage)="childChanged($event)"
+></app-inside>
